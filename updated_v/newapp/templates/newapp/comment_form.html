@@ -1,0 +1,20 @@
+{% extends 'newapp/base.html' %}
+
+{% block title %}
+    Create Thread
+{% endblock %}
+
+{% block body_block %}
+
+    <div class="container">
+
+        <h1>New comment</h1>
+        <form method="post" class="post-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Post comment</button>
+        </form>
+
+    </div>
+
+{% endblock %}

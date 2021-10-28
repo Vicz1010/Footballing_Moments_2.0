@@ -1,0 +1,38 @@
+{% extends 'newapp/base.html' %}
+
+{% block title %}
+  Threads
+{% endblock %}
+
+{% block body_block %}
+
+    <div class="container">
+
+        <br>
+        {% if user.is_authenticated %}
+        <button type="button" class="btn btn-light"><a href="{% url 'thread_new' %}">Create New Thread</a></button>
+
+        {% else %}
+        <p>Sign in to create a new thread or add to one of the ones below!</p>
+        {% endif %}
+    
+        <br>
+        <br>
+
+        {% for thread in thread_list %}
+
+            <div class="post">
+
+                <h2 class="thread_title"><a href="{% url 'thread_detail' pk=thread.pk %}">{{ thread.title }}</a></h2>
+                <small>Created by: {{ thread.name }}</small>
+                <small>Created on: {{ thread.created_date|date:"D M Y" }}</small>
+            
+                <a href="{% url 'thread_detail' pk=thread.pk %}">Comments: {{ thread.approve_comments.count }}</a>
+            </div>
+
+        {% endfor %}
+        </div>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'newapp/base.html' %}
+
+{% block title %}
+  Sign Up
+{% endblock %}
+
+{% block body_block %}
+
+    <div class="container">
+        <div class="jumbotron">
+            <h2>Please fill in the below fields:</h2>
+            
+            <form method="post" action="{% url 'sign_up' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+
+                <input type="submit" class='btn btn-primary' value="Create account" />
+                <input type="hidden" name="next" value="{{ next }}" />
+            </form>
+    
+        </div>
+
+    </div>
+
+{% endblock %}

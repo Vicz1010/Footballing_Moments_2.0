@@ -1,0 +1,31 @@
+/* Styling for base.html file */
+body{
+    background: #45D1CA;
+}
+
+h2{
+  text-align: left;
+  text-decoration: underline;
+  font-family: 'Pattaya', sans-serif;
+}
+
+h1{
+  text-align: center;
+  text-decoration: underline;
+  font-family: 'Pattaya', sans-serif;
+}
+
+img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.explanation{
+  text-align: center;
+}
+
+iframe{
+  display: block;
+  margin: auto;
+}

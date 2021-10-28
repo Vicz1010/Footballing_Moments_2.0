@@ -1,0 +1,19 @@
+{% extends 'newapp/base.html' %}
+
+{% block title %}
+  Thread Creation
+{% endblock %}
+
+{% block body_block %}
+    <h1>New post</h1>
+
+    <div class="container">
+        <form method="POST" action="{% url 'thread_new' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+
+    </div>
+
+{% endblock %}
